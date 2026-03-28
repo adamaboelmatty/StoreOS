@@ -37,7 +37,7 @@ export default function BarChart({
         {data.map((d, i) => {
           const barW = maxValue > 0 ? (d.value / maxValue) * chartWidth : 0
           const y = i * (barHeight + gap)
-          const color = d.color || '#00FF94'
+          const color = d.color || '#10B981'
 
           return (
             <g key={i}>
@@ -46,7 +46,7 @@ export default function BarChart({
                 x={labelWidth - 8}
                 y={y + barHeight / 2 + 4}
                 textAnchor="end"
-                fill="rgba(255,255,255,0.72)"
+                fill="rgba(0,0,0,0.60)"
                 fontSize="11"
               >
                 {d.label.length > 18 ? d.label.slice(0, 18) + '...' : d.label}
@@ -65,7 +65,7 @@ export default function BarChart({
               <text
                 x={labelWidth + barW + 8}
                 y={y + barHeight / 2 + 4}
-                fill="rgba(255,255,255,0.6)"
+                fill="rgba(0,0,0,0.50)"
                 fontSize="11"
               >
                 {d.value.toLocaleString()}
@@ -95,7 +95,7 @@ export default function BarChart({
         const barH = maxValue > 0 ? (d.value / maxValue) * chartH : 0
         const x = padding.left + barGap + i * (barWidth + barGap)
         const y = padding.top + chartH - barH
-        const color = d.color || '#00FF94'
+        const color = d.color || '#10B981'
 
         return (
           <g key={i}>
@@ -113,7 +113,7 @@ export default function BarChart({
               x={x + barWidth / 2}
               y={y - 6}
               textAnchor="middle"
-              fill="rgba(255,255,255,0.6)"
+              fill="rgba(0,0,0,0.50)"
               fontSize="10"
             >
               {d.value.toLocaleString()}
@@ -123,7 +123,7 @@ export default function BarChart({
               x={x + barWidth / 2}
               y={height - 8}
               textAnchor="middle"
-              fill="rgba(255,255,255,0.35)"
+              fill="rgba(0,0,0,0.40)"
               fontSize="10"
             >
               {d.label.length > 8 ? d.label.slice(0, 8) + '..' : d.label}

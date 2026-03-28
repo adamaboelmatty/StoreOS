@@ -39,9 +39,9 @@ export function getStatusColor(status: string): string {
 
 export function getStatusBg(status: string): string {
   switch (status) {
-    case 'paid': case 'fulfilled': case 'active': return 'bg-status-success/10 text-status-success'
-    case 'pending': case 'partial': return 'bg-status-warning/10 text-status-warning'
-    case 'refunded': case 'unfulfilled': case 'archived': return 'bg-status-error/10 text-status-error'
-    default: return 'bg-surface-2 text-text-secondary'
+    case 'paid': case 'fulfilled': case 'active': return 'bg-emerald-50 text-emerald-700'
+    case 'pending': case 'partial': return 'bg-amber-50 text-amber-700'
+    case 'refunded': case 'unfulfilled': case 'archived': return 'bg-red-50 text-red-700'
+    default: return 'bg-gray-100 text-gray-600'
   }
 }

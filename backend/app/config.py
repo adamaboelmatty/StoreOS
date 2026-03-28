@@ -31,6 +31,7 @@ class Settings(BaseSettings):
     SIMULATOR_ENABLED: bool = True
     SIMULATOR_INTERVAL_MIN: int = 60
     SIMULATOR_INTERVAL_MAX: int = 180
+    ANTHROPIC_API_KEY: str = ""
     DATABASE_URL: str = f"sqlite+aiosqlite:///{_repo_root}/hackathon.db"
 
     model_config = {

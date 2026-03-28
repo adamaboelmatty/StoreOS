@@ -23,13 +23,13 @@ export default function Modal({ open, onClose, title, children }: ModalProps) {
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-surface-0/80 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/20 backdrop-blur-sm"
         onClick={onClose}
       />
       {/* Panel */}
-      <div className="relative bg-surface-1 border border-border rounded-xl w-full max-w-lg mx-4 max-h-[80vh] flex flex-col">
+      <div className="relative bg-white border border-black/[0.06] rounded-2xl shadow-modal w-full max-w-lg mx-4 max-h-[80vh] flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-border">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-black/[0.06]">
           <h2 className="text-base font-semibold text-text-primary">{title}</h2>
           <button
             onClick={onClose}

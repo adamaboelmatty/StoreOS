@@ -11,7 +11,7 @@ interface KPICardProps {
 
 export default function KPICard({ title, value, change, prefix, suffix }: KPICardProps) {
   return (
-    <div className="bg-surface-1 border border-border rounded-lg p-4">
+    <div className="bg-white border border-black/[0.04] rounded-xl p-5 shadow-card">
       <p className="text-xs text-text-tertiary mb-2">{title}</p>
       <div className="flex items-baseline gap-1">
         {prefix && <span className="text-lg text-text-secondary">{prefix}</span>}

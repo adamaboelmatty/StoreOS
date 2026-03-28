@@ -143,7 +143,7 @@ export default function ProductsPage() {
       sortable: true,
       render: (_val: any, row: Product) => (
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-surface-2 rounded border border-border flex items-center justify-center text-text-tertiary text-xs">
+          <div className="w-8 h-8 bg-gray-100 rounded border border-black/[0.04] flex items-center justify-center text-gray-400 text-xs">
             {row.featured_image_url ? (
               <img src={row.featured_image_url} alt="" className="w-full h-full object-cover rounded" />
             ) : (
@@ -208,7 +208,7 @@ export default function ProductsPage() {
             value={search}
             onChange={(e) => { setSearch(e.target.value); setPage(1) }}
             placeholder="Search products..."
-            className="w-full bg-surface-2 border border-border rounded-md px-3 py-2 text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-border-active mb-3"
+            className="w-full bg-gray-50 border border-black/[0.06] rounded-lg px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-black/[0.12] mb-3"
           />
           <Tabs tabs={statusTabs} active={statusFilter} onChange={(k) => { setStatusFilter(k); setPage(1) }} />
         </div>
@@ -259,7 +259,7 @@ export default function ProductsPage() {
                 {selectedProduct.variants.map((v) => (
                   <div
                     key={v.id}
-                    className="flex items-center justify-between bg-surface-2 rounded-md px-3 py-2"
+                    className="flex items-center justify-between bg-gray-50 rounded-lg px-3 py-2"
                   >
                     <div>
                       <p className="text-sm text-text-primary">{v.title}</p>

@@ -17,7 +17,7 @@ interface LineChartProps {
 export default function LineChart({
   data,
   height = 200,
-  color = '#00FF94',
+  color = '#10B981',
   showGrid = true,
   showLabels = true,
   showTooltip = true,
@@ -84,7 +84,7 @@ export default function LineChart({
           y1={y}
           x2={width - padding.right}
           y2={y}
-          stroke="rgba(255,255,255,0.05)"
+          stroke="rgba(0,0,0,0.05)"
           strokeWidth="1"
         />
       ))}
@@ -104,7 +104,7 @@ export default function LineChart({
               x={points[i].x}
               y={height - 4}
               textAnchor="middle"
-              fill="rgba(255,255,255,0.35)"
+              fill="rgba(0,0,0,0.40)"
               fontSize="10"
             >
               {d.label}
@@ -144,7 +144,7 @@ export default function LineChart({
             y1={padding.top}
             x2={points[hoveredIndex].x}
             y2={padding.top + chartH}
-            stroke="rgba(255,255,255,0.15)"
+            stroke="rgba(0,0,0,0.10)"
             strokeWidth="1"
             strokeDasharray="3,3"
           />
@@ -153,7 +153,7 @@ export default function LineChart({
             cy={points[hoveredIndex].y}
             r="4"
             fill={color}
-            stroke="#0A0A0B"
+            stroke="#FFFFFF"
             strokeWidth="2"
           />
           <rect
@@ -162,15 +162,15 @@ export default function LineChart({
             width="70"
             height="20"
             rx="4"
-            fill="#222225"
-            stroke="rgba(255,255,255,0.08)"
+            fill="#FFFFFF"
+            stroke="rgba(0,0,0,0.08)"
             strokeWidth="1"
           />
           <text
             x={points[hoveredIndex].x}
             y={points[hoveredIndex].y - 14}
             textAnchor="middle"
-            fill="rgba(255,255,255,0.95)"
+            fill="#1A1A1A"
             fontSize="11"
             fontWeight="500"
           >

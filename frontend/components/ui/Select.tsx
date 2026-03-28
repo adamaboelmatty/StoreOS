@@ -12,7 +12,7 @@ export default function Select({ options, value, onChange, placeholder }: Select
     <select
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="bg-surface-2 border border-border rounded-md px-3 py-1.5 text-sm text-text-primary
+      className="bg-white border border-black/[0.08] rounded-md px-3 py-1.5 text-sm text-text-primary shadow-sm
         appearance-none cursor-pointer transition-colors duration-150 ease-out
         hover:border-border-hover focus:border-border-active focus:outline-none"
     >

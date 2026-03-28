@@ -48,7 +48,7 @@ export default function DataTable({
                 <th
                   key={col.key}
                   className={cn(
-                    'px-3 py-2.5 text-left text-xs font-medium text-text-tertiary uppercase tracking-wider bg-surface-1',
+                    'px-3 py-2.5 text-left text-xs font-medium text-text-tertiary uppercase tracking-wider bg-gray-50/80',
                     col.sortable && 'cursor-pointer select-none hover:text-text-secondary'
                   )}
                   onClick={() => col.sortable && handleSort(col.key)}
@@ -75,7 +75,7 @@ export default function DataTable({
                 key={row.id || rowIndex}
                 className={cn(
                   'border-b border-border transition-colors duration-150 ease-out',
-                  rowIndex % 2 === 1 && 'bg-surface-1/30',
+                  rowIndex % 2 === 1 && 'bg-gray-50/50',
                   onRowClick && 'cursor-pointer hover:bg-surface-2'
                 )}
                 onClick={() => onRowClick?.(row)}

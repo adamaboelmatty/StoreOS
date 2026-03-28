@@ -287,7 +287,7 @@ export default function OrdersPage() {
                 {selectedOrder.line_items.map((item, i) => (
                   <div
                     key={i}
-                    className="flex items-center justify-between bg-surface-2 rounded-md px-3 py-2"
+                    className="flex items-center justify-between bg-gray-50 rounded-lg px-3 py-2"
                   >
                     <div>
                       <p className="text-sm text-text-primary">{item.title}</p>

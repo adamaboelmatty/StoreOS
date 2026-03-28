@@ -5,17 +5,49 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 13px; }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: #0A0A0B;
-  color: rgba(255,255,255,0.95);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #F8F8FA;
+  color: #1A1A1A;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.08); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.14); }
 
-/* Utility */
-.transition-default { transition: all 150ms ease-out; }
+/* ── Animations ──────────────────────────────────────────────── */
+
+@keyframes fade-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fade-out-up { 0% { opacity: 1; max-height: 160px; } 100% { opacity: 0; max-height: 0; margin: 0; padding: 0; overflow: hidden; } }
+@keyframes fade-out-quick { 0% { opacity: 1; max-height: 160px; } 40% { opacity: 0; } 100% { opacity: 0; max-height: 0; margin: 0; padding: 0; overflow: hidden; } }
+@keyframes counter-bump { 0% { transform: scale(1); } 50% { transform: scale(1.04); } 100% { transform: scale(1); } }
+@keyframes toast-enter { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes toast-exit { from { opacity: 1; } to { opacity: 0; transform: translateY(-8px); } }
+@keyframes ring-draw { from { stroke-dashoffset: 226.2; } }
+@keyframes pulse-soft { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+.anim-fade-in { animation: fade-in 200ms ease-out both; }
+.anim-fade-out { animation: fade-out-up 350ms ease-out forwards; }
+.anim-dismiss { animation: fade-out-quick 300ms ease-out forwards; }
+.anim-bump { animation: counter-bump 300ms ease-out; }
+.anim-toast-in { animation: toast-enter 250ms ease-out forwards; }
+.anim-toast-out { animation: toast-exit 200ms ease-in forwards; }
+.anim-ring { animation: ring-draw 800ms ease-out forwards; }
+.anim-pulse { animation: pulse-soft 2s ease-in-out infinite; }
+
+/* ── Shimmer ─────────────────────────────────────────────────── */
+
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+.shimmer {
+  background: linear-gradient(90deg, transparent 30%, rgba(0,0,0,0.02) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* ── Utilities ───────────────────────────────────────────────── */
+
+.line-clamp-1 { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.tabular-nums { font-variant-numeric: tabular-nums; }

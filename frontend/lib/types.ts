@@ -112,3 +112,39 @@ export interface PaginatedResponse<T> {
   limit: number
   pages: number
 }
+
+// Command Feed action types
+export interface ActionExecution {
+  type: 'discount' | 'draft_order' | 'email'
+  code?: string
+  percentage?: number
+  line_items?: { variant_id: string; quantity: number }[]
+  to?: string
+  subject?: string
+  html?: string
+}
+
+export interface ScanAction {
+  id: string
+  priority: 'urgent' | 'high' | 'medium'
+  category: 'win-back' | 'low-stock' | 'margin-alert'
+  headline: string
+  reasoning: string
+  proposed_action: string
+  action_label?: string
+  execution: ActionExecution
+  estimated_value: number
+}
+
+export interface ScanResult {
+  health_score: number
+  health_summary: string
+  actions: ScanAction[]
+}
+
+export interface EventAnalysis {
+  insight: string | null
+  severity?: 'info' | 'warning' | 'critical'
+  suggested_action?: string | null
+  error?: string
+}

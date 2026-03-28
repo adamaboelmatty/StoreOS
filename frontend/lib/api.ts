@@ -9,6 +9,8 @@ import type {
   TopProduct,
   PaginatedResponse,
   LiveEvent,
+  ScanResult,
+  EventAnalysis,
 } from './types'
 
 class ApiClient {
@@ -149,6 +151,18 @@ class ApiClient {
     return this.fetch('/storefront/inject', {
       method: 'POST',
       body: JSON.stringify({ src }),
+    })
+  }
+
+  // CEO AI endpoints
+  async scan(): Promise<ScanResult> {
+    return this.fetch('/api/ceo/scan', { method: 'POST' })
+  }
+
+  async analyzeEvent(event_type: string, payload: Record<string, any>): Promise<EventAnalysis> {
+    return this.fetch('/api/ceo/analyze-event', {
+      method: 'POST',
+      body: JSON.stringify({ event_type, payload }),
     })
   }
 

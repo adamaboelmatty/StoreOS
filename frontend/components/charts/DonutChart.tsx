@@ -46,7 +46,7 @@ export default function DonutChart({
           cy={center}
           r={radius}
           fill="none"
-          stroke="rgba(255,255,255,0.05)"
+          stroke="rgba(0,0,0,0.04)"
           strokeWidth={thickness}
         />
         {/* Segments */}
@@ -72,7 +72,7 @@ export default function DonutChart({
             x={center}
             y={center - 4}
             textAnchor="middle"
-            fill="rgba(255,255,255,0.95)"
+            fill="#1A1A1A"
             fontSize="18"
             fontWeight="600"
           >
@@ -84,7 +84,7 @@ export default function DonutChart({
             x={center}
             y={center + 14}
             textAnchor="middle"
-            fill="rgba(255,255,255,0.48)"
+            fill="#9D9DA7"
             fontSize="10"
           >
             {centerLabel}

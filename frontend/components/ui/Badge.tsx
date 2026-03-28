@@ -7,10 +7,10 @@ interface BadgeProps {
 }
 
 const variantClasses: Record<string, string> = {
-  success: 'bg-status-success/10 text-status-success',
-  warning: 'bg-status-warning/10 text-status-warning',
-  error: 'bg-status-error/10 text-status-error',
-  neutral: 'bg-surface-2 text-text-secondary',
+  success: 'bg-emerald-50 text-emerald-700',
+  warning: 'bg-amber-50 text-amber-700',
+  error: 'bg-red-50 text-red-700',
+  neutral: 'bg-gray-100 text-gray-600',
 }
 
 export default function Badge({ children, variant = 'neutral' }: BadgeProps) {
